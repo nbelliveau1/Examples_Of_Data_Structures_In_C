@@ -1,0 +1,31 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+
+/**
+ * Steps needed to loop through a static array:
+ * 1)Define an array:
+ *      Format: datatype arrayName[definedSize] 
+ *
+ *Use sizeof operator to determine length of total array by dividing total memory allocation of array, by a single index within the array:
+ * 
+ * 1)The sizeof operator gives you the number of bytes that something occupies in memory.
+    2)sizeof(numbers) → total size in bytes of the array numbers.
+    3)sizeof(numbers[0]) → size in bytes of a single element (the element at index 0).
+ */
+ 
+ 
+ int nicksFavoriteNumbers[3]= {34,20,65}; //Static array of two.
+ 
+ //Determine length of array
+ int length = sizeof(nicksFavoriteNumbers) / sizeof(nicksFavoriteNumbers[0]);
+ 
+ for(int i = 0; i < length; i++){
+     printf("\nFavorite number %d", nicksFavoriteNumbers[i]);
+ }
+ 
+ 
+
+    return 0;
+}
