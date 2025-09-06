@@ -1,0 +1,45 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    char nicksFavoriteName[]= "Marty";
+    
+    int lengthOfFavoriteName = strlen(nicksFavoriteName);
+    
+    printf("Marty's name has %d characters within his name", lengthOfFavoriteName);
+    
+    for(int i=-1; i < lengthOfFavoriteName; i++){
+        printf("%c\n", nicksFavoriteName[i]);
+    }
+    
+    //strcpy()
+    
+    char food[] = "Pizza";
+    
+    char bestFood[strlen(food)]; //bestFoods array length is set to array of food
+    
+    strcpy(bestFood, food);//Copying array elements from food to bestFood
+    
+    printf("%s\n", bestFood);//Printing array of best food
+    
+    //Example of strcat()
+    
+    char joint[] = "Joint";
+    
+    strcat(food, joint);
+    
+    printf("%s\n", food);
+    
+    //Example of strcmp()= Chechs for if strings are equal
+    
+    char text1[] = "Nick";
+    char text2[] = "Nick";
+    
+    int results = strcmp(text1,text2);
+    
+    printf("The number of not indentical elements within text1 array and text2 array %d", results);
+
+    return 0;
+}
