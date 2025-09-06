@@ -1,0 +1,31 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+
+//Multi-Dimensional Arrays: //X number of rows, y number of colums
+//First array represents rows
+//Second array represents columns
+int array[2][3]= { {34,20,65} , {10,20,40}}; //Two arrays with three elements
+
+
+printf("%d\n", array[0][0]);
+printf("%d\n", array[0][0]);
+
+array[0][0] = 1; //Changing value of first array, element one from 34 to 1
+
+printf("%d\n", array[0][0]);
+
+//For loop interating through mulit-dimensional array
+
+for(int i = 0; i <2; i++){//Then progresses to outer for loop
+    for(int j = 0; j <3; j++){ //Inner loop first until condtion met
+        printf("%d\n", array[i][j]);
+    }
+}
+
+
+
+
+    return 0;
+}
