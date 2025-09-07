@@ -1,0 +1,44 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+//Pointers allow us to work directly with memory
+//Pointers store the memory address; not the actual variable
+
+
+//Ambersand(&) refers to memory address location(Refers to the mailboxes address,not the contents of what is in within the mailbox)
+
+int age = 25;
+
+printf("%p",&age); //Printing the memory address(Think mailbox address)
+
+printf("\nEnter a value:");
+scanf("%d", &age);
+
+int* ptr = &age;
+
+printf("\nAddress: %p", ptr); //Pointer being assigned memory address of int age
+
+printf("\nThe value of age is %d", age); //Prints value of variable
+
+
+
+
+//Using a pointer to directly store value into a variable
+
+//Think of the pointer as the mailman who can access any mailbox when he has been provided the correct address and can put elements into that mailbox
+
+int newAge =28; //Starting value of 28
+
+int* newPointer = &newAge; //Assinging pointer to the memory address 
+
+printf("\nThe current value of newAge is %d", newAge);
+
+printf("\nLets update the value of newAge using a pointer\n Enter a new value:");
+scanf("%d", newPointer);
+printf("The new value of newAge is %d", newAge);
+
+    
+    
+    return 0;
+}
