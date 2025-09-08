@@ -1,0 +1,99 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void modFunction(int number){
+    int results = number % 2;
+    
+    if (results == 0){
+        printf("Your number is even");
+    }
+    else{
+        printf("Your number is odd");
+    }
+}
+
+/**
+ * /**
+ * params 
+ * int* num is a pointer to a int variable
+ * 
+ * int* num is pointing to the memory address of 39
+ * 
+ * !!!!!!
+ * When we pass the address of a number variable into this function
+ * The pointer variable inside the function updates the variable number directly in memory!!!!!!!
+ */
+
+void changeVariableFromMemoryUsingPointer(int* num){
+    *num = 39;
+}
+
+
+
+
+//New function 
+
+int* addNumber(int* num1, int* num2, int* sum){
+    
+    *sum = *num1 + *num2;
+    
+    return sum; //Returns the memory address of sum
+    
+}
+
+int* modNumber(int* num1, int* num2, int* mod){
+    
+    //Memory location of mod will be the result of num1 and num2 added together 
+    *mod = (*num1 + *num2)%2;
+    
+    return mod;}
+    
+    
+    
+
+int main() {
+    
+    int example1 = 21;
+    
+    int example2 = 38; 
+    
+    
+    //Changes value of number from 21 to 39 via pointer within function
+    changeVariableFromMemoryUsingPointer(&example1); 
+    
+    //Changes value of otherNumber from 38 to 39 via pointer within function
+    changeVariableFromMemoryUsingPointer(&example2);
+    
+    printf("New value 1: %d", example1);
+    
+    printf("\nNew value 2: %d", example2);
+    
+    
+    //Demonstration of addNumber 
+    
+    int val1 =10;
+    int val2 =25;
+    int sum;
+    
+    int* results = addNumber(&val1,&val2,&sum); //Accessing the memory address of addNumber return value. 
+        //Direclty updates the memory address of sum
+    
+    printf("The sum is %d", *results);
+    
+    
+    
+    //Demonsation of mod
+    
+    int num1 =5;
+    int num2 =3;
+    int mod; //Has no value intitally; value updated by function via pointer
+    
+    //Takes three memory addresses 
+    //Pointers access values via memory addresses within function
+    //Updates mod variable by accessing memory address via pointer 
+    int* results2 = modNumber(&num1,&num2,&mod);
+    printf("When I add num1(%d)and num2(%d), The mod value is %d", num1,num2,*results2);
+
+    //The reason you need a star in results two is because the value of results2 = memory address
+    //If you dont have the star, you are only having access to the memory address because result 2 is a pointer and that pointer is just pointing to a piece of memory
+    //To access the value to which results2 pointer is holding, you need to use the asterick which is like that mailman's key to open up the mailbox and see the contents
